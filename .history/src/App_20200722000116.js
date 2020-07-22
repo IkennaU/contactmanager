@@ -13,7 +13,6 @@ function App() {
       <div className="App">
         <Header branding="Contact Manager" />
         <div className="container">
-          <AddContact />
           <Contacts />
         </div>
       </div>
