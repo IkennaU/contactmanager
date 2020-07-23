@@ -31,10 +31,7 @@ class AddContact extends Component {
       email: this.state.email,
       phone: this.state.phone,
     };
-    axios
-      .post("https://jsonplaceholder.typicode.com/users", newContact)
-      .then((res) => dispatch({ type: "ADD_CONTACT", payload: res.data }));
-
+    dispatch({ type: "ADD_CONTACT", payload: newContact });
     // clear state
     this.setState({ name: "", email: "", phone: "", errors: {} });
     // Redirect...

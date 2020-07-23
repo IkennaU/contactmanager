@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import Contact from "../contacts/Contact";
 import { Consumer } from "../../context";
 
 class Contacts extends Component {
+  static propTypes = {};
+
   render() {
     return (
       <Consumer>

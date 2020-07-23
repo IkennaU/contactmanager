@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Consumer } from "../../context";
 import axios from "axios";
@@ -42,7 +41,7 @@ class Contact extends Component {
                     value.dispatch
                   )}
                 ></i>
-                <Link to={`contact/edit/${this.props.contact.id}`}>
+                <Link to={`contact/edit/${id}`}>
                   <i
                     style={{
                       cursor: "pointer",

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Consumer } from "../../context";
 import TextInputGroup from "../layout/TextInputGroup";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
 class AddContact extends Component {
@@ -26,15 +25,12 @@ class AddContact extends Component {
       return;
     }
     const newContact = {
-      id: uuidv4(),
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phone,
     };
-    axios
-      .post("https://jsonplaceholder.typicode.com/users", newContact)
-      .then((res) => dispatch({ type: "ADD_CONTACT", payload: res.data }));
-
+    axios.post("https://jsonplaceholder.typicode.com/users");
+    dispatch({ type: "ADD_CONTACT", payload: newContact });
     // clear state
     this.setState({ name: "", email: "", phone: "", errors: {} });
     // Redirect...

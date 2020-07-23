@@ -5,7 +5,7 @@ import TextInputGroup from "../layout/TextInputGroup";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
-class AddContact extends Component {
+class EditContact extends Component {
   static propTypes = {};
 
   state = { name: "", email: "", phone: "", errors: {} };
@@ -25,15 +25,6 @@ class AddContact extends Component {
       this.setState({ errors: { phone: "Phone is Required" } });
       return;
     }
-    const newContact = {
-      id: uuidv4(),
-      name: this.state.name,
-      email: this.state.email,
-      phone: this.state.phone,
-    };
-    axios
-      .post("https://jsonplaceholder.typicode.com/users", newContact)
-      .then((res) => dispatch({ type: "ADD_CONTACT", payload: res.data }));
 
     // clear state
     this.setState({ name: "", email: "", phone: "", errors: {} });
@@ -79,7 +70,7 @@ class AddContact extends Component {
                   />
                   <input
                     type="submit"
-                    value="Add Contact"
+                    value="Update Contact"
                     className="btn btn-light btn-block"
                   />
                 </form>
@@ -92,4 +83,4 @@ class AddContact extends Component {
   }
 }
 
-export default AddContact;
+export default EditContact;
